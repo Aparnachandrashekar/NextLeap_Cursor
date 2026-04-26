@@ -1,20 +1,25 @@
 import { NextResponse } from "next/server";
 
-function backendBase() {
-  const base = process.env.BACKEND_API_URL || process.env.NEXT_PUBLIC_API_URL;
-  if (!base) {
-    throw new Error(
-      "Missing backend URL. Set BACKEND_API_URL in Vercel environment variables.",
-    );
-  }
-  return base.replace(/\/+$/, "");
-}
+import { resolveBackendBaseUrl } from "@/lib/backendProxy";
+
+export const dynamic = "force-dynamic";
 
 export async function GET() {
+  const base = resolveBackendBaseUrl();
+  if (!base) {
+    return NextResponse.json(
+      {
+        error:
+          "Backend URL not configured. In Vercel, set BACKEND_API_URL to your public API (e.g. https://api.example.com), not 127.0.0.1. See /api/health for diagnostics.",
+      },
+      { status: 503 },
+    );
+  }
   try {
-    const res = await fetch(`${backendBase()}/locations`, {
+    const res = await fetch(`${base}/locations`, {
       headers: { Accept: "application/json" },
       cache: "no-store",
+      signal: AbortSignal.timeout(30_000),
     });
     const text = await res.text();
     return new NextResponse(text, {
@@ -23,6 +28,9 @@ export async function GET() {
     });
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Failed to reach backend /locations";
-    return NextResponse.json({ error: msg }, { status: 500 });
+    return NextResponse.json(
+      { error: msg, hint: `Tried: ${new URL("/locations", base + "/").toString()}` },
+      { status: 502 },
+    );
   }
 }
