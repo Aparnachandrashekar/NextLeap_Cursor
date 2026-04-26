@@ -1,8 +1,7 @@
 import type { RecommendResponse } from "../types";
-import { API_BASE } from "../types";
 
 export async function fetchLocations(): Promise<string[]> {
-  const res = await fetch(`${API_BASE}/locations`);
+  const res = await fetch("/api/locations");
   if (!res.ok) {
     const t = await res.text();
     throw new Error(t || res.statusText);
@@ -14,7 +13,7 @@ export async function fetchLocations(): Promise<string[]> {
 export async function fetchRecommendations(
   body: unknown,
 ): Promise<RecommendResponse> {
-  const res = await fetch(`${API_BASE}/recommend`, {
+  const res = await fetch("/api/recommend", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),

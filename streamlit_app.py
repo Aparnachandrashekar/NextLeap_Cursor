@@ -72,13 +72,13 @@ def _maybe_ingest_if_empty() -> None:
         secrets = st.secrets
     except Exception:
         secrets = {}
-    limit: int = 5_000
+    limit: int | None = None
     try:
         v = os.getenv("RR_STREAMLIT_INGEST_LIMIT") or (secrets or {}).get("RR_STREAMLIT_INGEST_LIMIT")
         if v is not None and str(v).strip():
             limit = int(str(v).strip())
     except (TypeError, ValueError):
-        limit = 5_000
+        limit = None
     try:
         with st.spinner("First-time load: building SQLite from Hugging Face (one-time; may take a few minutes)..."):
             from phase1.ingest import ingest_to_sqlite
@@ -100,7 +100,7 @@ def _maybe_ingest_if_empty() -> None:
         )
         st.exception(exc)
         st.info(
-            "Set **RR_GROQ_API_KEY** in secrets. Optionally set **RR_STREAMLIT_INGEST_LIMIT** (default 5000) "
+            "Set **RR_GROQ_API_KEY** in secrets. Optionally set **RR_STREAMLIT_INGEST_LIMIT** "
             "or build `data/restaurants.db` locally with `python -m phase1.ingest` and commit a deployment artifact.",
         )
         st.stop()
