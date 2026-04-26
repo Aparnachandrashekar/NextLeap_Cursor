@@ -12,6 +12,8 @@ def connect_sqlite(db_path: str) -> sqlite3.Connection:
     path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
+    # Fresh deploys (e.g. Streamlit /tmp DB) can create an empty file with no schema.
+    init_schema(conn)
     return conn
 
 

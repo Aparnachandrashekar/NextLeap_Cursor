@@ -1,0 +1,12 @@
+{
+  "name": "nextleap-monorepo",
+  "private": true,
+  "description": "Presence of package.json at the monorepo root nudges Vercel toward a Node/Next build. If deploy still targets Python, set the Vercel project Root Directory to 'frontend' (recommended).",
+  "engines": {
+    "node": ">=20 <23"
+  },
+  "scripts": {
+    "vercel-build": "cd frontend && npm run build",
+    "vercel-install": "cd frontend && npm install"
+  }
+}
