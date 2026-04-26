@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#0076d3",
+                    "surface-tint": "#ad3300",
+                    "surface-bright": "#fff8f6",
+                    "inverse-primary": "#ffb59e",
+                    "outline-variant": "#e6beb2",
+                    "on-primary-container": "#fffbff",
+                    "inverse-surface": "#3f2c26",
+                    "error": "#ba1a1a",
+                    "secondary": "#505f76",
+                    "tertiary": "#005da8",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#ffe2da",
+                    "secondary-container": "#d0e1fb",
+                    "on-primary-fixed": "#3a0b00",
+                    "outline": "#916f65",
+                    "primary-fixed": "#ffdbd0",
+                    "on-secondary-container": "#54647a",
+                    "surface-container": "#ffe9e3",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#001c39",
+                    "on-tertiary-fixed-variant": "#004884",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#d34000",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#0b1c30",
+                    "surface-container-highest": "#fbdcd3",
+                    "surface": "#fff8f6",
+                    "inverse-on-surface": "#ffede8",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#a4c9ff",
+                    "primary-fixed-dim": "#ffb59e",
+                    "on-tertiary-container": "#fdfcff",
+                    "surface-variant": "#fbdcd3",
+                    "on-background": "#281712",
+                    "primary": "#a93100",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#5c4037",
+                    "tertiary-fixed": "#d4e3ff",
+                    "surface-container-low": "#fff1ed",
+                    "on-surface": "#281712",
+                    "background": "#fff8f6",
+                    "on-primary-fixed-variant": "#842500",
+                    "surface-dim": "#f2d3ca",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-secondary-fixed-variant": "#38485d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "1rem",
+                    "gutter": "1rem",
+                    "lg": "1.5rem",
+                    "margin-mobile": "1rem",
+                    "xl": "2rem",
+                    "sm": "0.5rem",
+                    "margin-desktop": "2.5rem",
+                    "base": "4px",
+                    "xs": "0.25rem",
+                    "2xl": "3rem"
+            },
+            "fontFamily": {
+                    "title-sm": ["Be Vietnam Pro"],
+                    "headline-md": ["Epilogue"],
+                    "display-lg": ["Epilogue"],
+                    "body-sm": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md dark:bg-slate-950/95 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center h-16 max-w-7xl mx-auto px-4 sm:px-8">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-orange-600 dark:text-orange-500">AIroma</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1 font-bold font-epilogue text-base" href="#">Discover</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all font-epilogue text-base font-medium px-2 py-1 rounded-lg" href="#">Trending</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all font-epilogue text-base font-medium px-2 py-1 rounded-lg" href="#">Collections</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all font-epilogue text-base font-medium px-2 py-1 rounded-lg" href="#">Nearby</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="min-h-screen">
+<!-- Hero & Search Section -->
+<section class="relative pt-16 pb-24 px-4 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent"></div>
+<img class="w-full h-full object-cover opacity-20" data-alt="overhead shot of a variety of colorful gourmet dishes on a rustic wooden table with soft diffused morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAjFvPB0iaagbJHo1TjJv8LjR79q-Wf6sz7J3B7AHhIWU0OZiess1qC4WY6mxW7qCx3gxtzJxX7P-y6fMaUqUNAJePuHt_nlGiZoNs_1Wfce56Je1fCR6SmkXLtmEbuNuxh9INZ3hRKRqw5JMw65nU5dwMGiS0fSKuFK3w2Dmh3KPCADkw9hRA-_MDy_qPVVUbcbhI37oPq1fRDCzHnRZ4VdvRday4cRovyTVpRWIz7DmBEgm7sV0hcHdYjzkbIVBmlX-YXosNYs3O"/>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto text-center mb-12">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">Find your next favorite meal</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Discover AI-curated dining experiences tailored to your taste, budget, and mood.</p>
+</div>
+<!-- Search Form Card -->
+<div class="relative z-10 max-w-4xl mx-auto bg-white/80 backdrop-blur-xl border border-outline-variant shadow-xl rounded-2xl p-6 md:p-8">
+<form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Location -->
+<div class="space-y-2 lg:col-span-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span> LOCATION
+                        </label>
+<input class="w-full bg-surface-container-lowest border-outline-variant rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Enter neighborhood or city" type="text" value="San Francisco, CA"/>
+</div>
+<!-- Budget -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">BUDGET</label>
+<div class="flex bg-surface-container-lowest p-1 rounded-xl border border-outline-variant">
+<button class="flex-1 py-2 rounded-lg bg-primary-container text-white font-bold text-sm" type="button">$</button>
+<button class="flex-1 py-2 rounded-lg hover:bg-surface-variant text-on-surface-variant font-bold text-sm" type="button">$$</button>
+<button class="flex-1 py-2 rounded-lg hover:bg-surface-variant text-on-surface-variant font-bold text-sm" type="button">$$$</button>
+</div>
+</div>
+<!-- Max Cost -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">MAX COST (PP)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span>
+<input class="w-full bg-surface-container-lowest border-outline-variant rounded-xl pl-8 pr-4 py-3 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="50" type="number"/>
+</div>
+</div>
+<!-- Cuisine Chips -->
+<div class="lg:col-span-4 space-y-3">
+<label class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">restaurant_menu</span> CUISINE TYPE
+                        </label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full bg-primary-container text-white font-title-sm text-[14px]" type="button">Italian</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-container/10 transition-colors font-title-sm text-[14px]" type="button">Japanese</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-container/10 transition-colors font-title-sm text-[14px]" type="button">Indian</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-container/10 transition-colors font-title-sm text-[14px]" type="button">Mexican</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-container/10 transition-colors font-title-sm text-[14px]" type="button">French</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-container/10 transition-colors font-title-sm text-[14px]" type="button">Thai</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] align-middle">add</span>
+</button>
+</div>
+</div>
+<!-- Rating Slider -->
+<div class="lg:col-span-2 space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-on-surface-variant">MINIMUM RATING</label>
+<span class="font-bold text-primary">4.5+ Stars</span>
+</div>
+<input class="w-full h-2 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" max="5" min="1" step="0.5" type="range" value="4.5"/>
+</div>
+<!-- CTA Button -->
+<div class="lg:col-span-2 flex items-end">
+<button class="w-full bg-[#FF4F00] text-white font-headline-md text-headline-md py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform active:translate-y-0.5 hover:-translate-y-0.5 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">search</span>
+                            Find Restaurants
+                        </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Trending Section -->
+<section class="max-w-7xl mx-auto px-4 sm:px-8 py-16">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="font-headline-md text-display-lg text-on-surface">Trending nearby</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">What's hot in San Francisco right now</p>
+</div>
+<button class="hidden md:flex items-center gap-2 text-primary font-title-sm">
+                    View all <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Bento-ish Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="modern industrial chic restaurant interior with hanging plants and warm Edison bulbs lighting a cozy dining space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiXbfGlUxBKSd9S-4DptEXzkBo-7leZIPIU4mEUAqEqMOJrCp5HF3hvv1WndDuVbnxkWLbNXHnBDYy5Dvsraxmly0a41Soqp2cJ_6_t9LApQqEMyOAZ-2LXodbhYS6WNMczw6s8CsHL7Az6DfkFbKbmxANQfosj--af0u_jZ60rr3tscC7K_hysosyWD9095Sbx6WAQ5WfsuNWcYkMx5P9pzJKFsrGhlOZhmCrgHHuOYHUZ5oFPzhSV-Nd2b6wLoOjuTPVLDFNts1T"/>
+<span class="absolute top-4 left-4 bg-primary text-white font-epilogue font-bold text-xs px-3 py-1.5 rounded-full shadow-lg">Trending</span>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-title-sm text-title-sm text-on-surface">Lumina Dining Lab</h3>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-orange-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-sm">4.9</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Mission District, SF • 0.8 miles
+                        </p>
+<div class="flex items-center gap-2 pt-2">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant">Modern French</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant">$$$</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="upscale sushi bar with expert chef preparing nigiri under focused soft spotlighting and a minimalist wooden interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlJ_1SMeKs8X1zHGnreEMtKdtFYH-042eZnQ2jvFL7xGBsbZZv9pmqLok7I8BNr_gkYuR3y-md9zub8y5FLwuFLdMwkoC_7EIgmuLCsNSlOf8M3fVyreG1JPMSLWVhjyNgEa1i0NTkI6Dde3z4JsIOQSHxtax8Om0RxAo2t3ykyKCklf1jRWcbhv9FI2wXT_h72Mb4o8kfUR-L9JPKGwONFfrAcwIWdCv1TTQaOvqP5v25T9--TIGmNaLY2fhXu_Tw0bw1vgFfcGJU"/>
+<span class="absolute top-4 left-4 bg-tertiary-container text-white font-epilogue font-bold text-xs px-3 py-1.5 rounded-full shadow-lg">Top Rated</span>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-title-sm text-title-sm text-on-surface">Umami Kaze</h3>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-orange-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-sm">4.8</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Nob Hill, SF • 1.2 miles
+                        </p>
+<div class="flex items-center gap-2 pt-2">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant">Japanese</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant">$$</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="vibrant mediterranean restaurant patio at sunset with white table cloths and glasses of wine glowing in golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6cmWZqRZPbvCS_iNMqvSlF8I5wKfn0ZUoEcDmrqM_vlcPGK7rHsUfSn86Q0N57SanaQI4Dn6ltNtP5rD6IDbKUrM8HkO0MJwsSZV-7rVAD9946dzQUOEZ0B9Z0ns6g9GN0gdIlf7qxvY2UopU32VbT7k4V44fCvbXXJVQ1BxJW12u7u0nbzzYFdwh_DKbNp-B7GtJ3Z0FGXxaBwGfxwdVq-k5BOQE4OYb_BAH_ZlOKZXkoI7Dn7_McT2lucRk2dqdF_s62VPCN9cl"/>
+<span class="absolute top-4 left-4 bg-orange-500 text-white font-epilogue font-bold text-xs px-3 py-1.5 rounded-full shadow-lg">New Arrival</span>
+<button class="absolute top-4 right-4 bg-white/80 backdrop-blur-md p-2 rounded-full hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-start">
+<h3 class="font-title-sm text-title-sm text-on-surface">The Olive Branch</h3>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-orange-500 text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-sm">4.7</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Hayes Valley, SF • 0.5 miles
+                        </p>
+<div class="flex items-center gap-2 pt-2">
+<span class="px-3 py-1 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant">Mediterranean</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full text-xs font-bold text-on-surface-variant">$$</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-orange-600 dark:text-orange-500">AIroma</span>
+<p class="font-epilogue text-sm text-slate-500 dark:text-slate-400">© 2024 AIroma. Effortless culinary discovery.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">About Us</a>
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Privacy</a>
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Terms</a>
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Partner Support</a>
+</div>
+</div>
+</footer>
+<!-- FAB for mobile search context -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-[#FF4F00] text-white rounded-full shadow-2xl flex items-center justify-center z-40 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[28px]">search</span>
+</button>
+</body></html>

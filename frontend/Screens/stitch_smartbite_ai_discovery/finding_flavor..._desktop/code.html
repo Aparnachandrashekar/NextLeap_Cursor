@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-container": "#0076d3",
+                  "surface-tint": "#ad3300",
+                  "surface-bright": "#fff8f6",
+                  "inverse-primary": "#ffb59e",
+                  "outline-variant": "#e6beb2",
+                  "on-primary-container": "#fffbff",
+                  "inverse-surface": "#3f2c26",
+                  "error": "#ba1a1a",
+                  "secondary": "#505f76",
+                  "tertiary": "#005da8",
+                  "secondary-fixed-dim": "#b7c8e1",
+                  "on-error": "#ffffff",
+                  "surface-container-high": "#ffe2da",
+                  "secondary-container": "#d0e1fb",
+                  "on-primary-fixed": "#3a0b00",
+                  "outline": "#916f65",
+                  "primary-fixed": "#ffdbd0",
+                  "on-secondary-container": "#54647a",
+                  "surface-container": "#ffe9e3",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-fixed": "#001c39",
+                  "on-tertiary-fixed-variant": "#004884",
+                  "surface-container-lowest": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "primary-container": "#d34000",
+                  "error-container": "#ffdad6",
+                  "on-secondary-fixed": "#0b1c30",
+                  "surface-container-highest": "#fbdcd3",
+                  "surface": "#fff8f6",
+                  "inverse-on-surface": "#ffede8",
+                  "on-primary": "#ffffff",
+                  "tertiary-fixed-dim": "#a4c9ff",
+                  "primary-fixed-dim": "#ffb59e",
+                  "on-tertiary-container": "#fdfcff",
+                  "surface-variant": "#fbdcd3",
+                  "on-background": "#281712",
+                  "primary": "#a93100",
+                  "on-tertiary": "#ffffff",
+                  "on-surface-variant": "#5c4037",
+                  "tertiary-fixed": "#d4e3ff",
+                  "surface-container-low": "#fff1ed",
+                  "on-surface": "#281712",
+                  "background": "#fff8f6",
+                  "on-primary-fixed-variant": "#842500",
+                  "surface-dim": "#f2d3ca",
+                  "secondary-fixed": "#d3e4fe",
+                  "on-secondary-fixed-variant": "#38485d"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "1rem",
+                  "gutter": "1rem",
+                  "lg": "1.5rem",
+                  "margin-mobile": "1rem",
+                  "xl": "2rem",
+                  "sm": "0.5rem",
+                  "margin-desktop": "2.5rem",
+                  "base": "4px",
+                  "xs": "0.25rem",
+                  "2xl": "3rem"
+          },
+          "fontFamily": {
+                  "title-sm": ["Be Vietnam Pro"],
+                  "headline-md": ["Epilogue"],
+                  "display-lg": ["Epilogue"],
+                  "body-sm": ["Be Vietnam Pro"],
+                  "body-md": ["Be Vietnam Pro"],
+                  "label-caps": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+                  "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    .skeleton {
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 1000px 100%;
+      animation: shimmer 2s infinite linear;
+    }
+    .dark .skeleton {
+      background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+      background-size: 1000px 100%;
+    }
+  </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar Anchor -->
+<header class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md dark:bg-slate-950/95 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center h-16 max-w-7xl mx-auto px-4 sm:px-8">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-orange-600 dark:text-orange-500 font-display-lg">AIroma</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-epilogue text-base font-bold text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1" href="#">Discover</a>
+<a class="font-epilogue text-base font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 transition-all" href="#">Trending</a>
+<a class="font-epilogue text-base font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 transition-all" href="#">Collections</a>
+<a class="font-epilogue text-base font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 transition-all" href="#">Nearby</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<!-- Disabled Search UI -->
+<div class="hidden lg:flex items-center bg-surface-container border border-outline-variant rounded-full px-4 py-2 w-80 opacity-60">
+<span class="material-symbols-outlined text-outline">search</span>
+<span class="ml-2 text-outline font-body-sm">Searching for culinary inspiration...</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-600 dark:text-slate-400 opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 dark:text-slate-400 opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-8 py-8">
+<!-- Filter Bar - Disabled State -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex flex-wrap gap-3">
+<div class="h-10 w-24 skeleton rounded-full opacity-60"></div>
+<div class="h-10 w-28 skeleton rounded-full opacity-60"></div>
+<div class="h-10 w-20 skeleton rounded-full opacity-60"></div>
+<div class="h-10 w-32 skeleton rounded-full opacity-60"></div>
+</div>
+<div class="h-10 w-40 skeleton rounded-lg opacity-40"></div>
+</div>
+<!-- Main Results Layout -->
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- List View Section -->
+<div class="flex-1 space-y-6">
+<div class="h-8 w-64 skeleton rounded-md mb-6"></div>
+<!-- Skeleton Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<div class="h-48 w-full skeleton"></div>
+<div class="p-4 space-y-3">
+<div class="h-6 w-3/4 skeleton rounded"></div>
+<div class="flex gap-2">
+<div class="h-4 w-16 skeleton rounded"></div>
+<div class="h-4 w-16 skeleton rounded"></div>
+</div>
+<div class="pt-2 flex justify-between items-center">
+<div class="h-5 w-20 skeleton rounded"></div>
+<div class="h-8 w-24 skeleton rounded-lg"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<div class="h-48 w-full skeleton"></div>
+<div class="p-4 space-y-3">
+<div class="h-6 w-1/2 skeleton rounded"></div>
+<div class="flex gap-2">
+<div class="h-4 w-16 skeleton rounded"></div>
+<div class="h-4 w-16 skeleton rounded"></div>
+</div>
+<div class="pt-2 flex justify-between items-center">
+<div class="h-5 w-24 skeleton rounded"></div>
+<div class="h-8 w-24 skeleton rounded-lg"></div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<div class="h-48 w-full skeleton"></div>
+<div class="p-4 space-y-3">
+<div class="h-6 w-2/3 skeleton rounded"></div>
+<div class="flex gap-2">
+<div class="h-4 w-16 skeleton rounded"></div>
+<div class="h-4 w-16 skeleton rounded"></div>
+</div>
+<div class="pt-2 flex justify-between items-center">
+<div class="h-5 w-16 skeleton rounded"></div>
+<div class="h-8 w-24 skeleton rounded-lg"></div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant">
+<div class="h-48 w-full skeleton"></div>
+<div class="p-4 space-y-3">
+<div class="h-6 w-3/4 skeleton rounded"></div>
+<div class="flex gap-2">
+<div class="h-4 w-16 skeleton rounded"></div>
+<div class="h-4 w-16 skeleton rounded"></div>
+</div>
+<div class="pt-2 flex justify-between items-center">
+<div class="h-5 w-28 skeleton rounded"></div>
+<div class="h-8 w-24 skeleton rounded-lg"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Map View Placeholder Section -->
+<div class="hidden lg:block lg:w-[400px] xl:w-[450px]">
+<div class="sticky top-24 h-[calc(100vh-160px)] w-full skeleton rounded-2xl border border-outline-variant relative overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="flex flex-col items-center gap-4 text-outline-variant">
+<span class="material-symbols-outlined text-6xl">map</span>
+<span class="font-title-sm">Loading culinary map...</span>
+</div>
+</div>
+<!-- Mock Map Markers (Skeletons) -->
+<div class="absolute top-1/4 left-1/3 h-8 w-8 skeleton rounded-full border-2 border-white shadow-lg"></div>
+<div class="absolute top-1/2 left-2/3 h-8 w-8 skeleton rounded-full border-2 border-white shadow-lg"></div>
+<div class="absolute bottom-1/3 left-1/4 h-8 w-8 skeleton rounded-full border-2 border-white shadow-lg"></div>
+<div class="absolute top-2/3 left-1/2 h-8 w-8 skeleton rounded-full border-2 border-white shadow-lg"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Anchor -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 w-full rounded-none">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-orange-600 dark:text-orange-500 font-display-lg">AIroma</span>
+<p class="text-slate-500 dark:text-slate-400 font-epilogue text-sm">© 2024 AIroma. Effortless culinary discovery.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Partner Support</a>
+</div>
+</div>
+</footer>
+</body></html>

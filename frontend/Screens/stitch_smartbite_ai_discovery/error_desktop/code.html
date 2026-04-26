@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-container": "#0076d3",
+                  "surface-tint": "#ad3300",
+                  "surface-bright": "#fff8f6",
+                  "inverse-primary": "#ffb59e",
+                  "outline-variant": "#e6beb2",
+                  "on-primary-container": "#fffbff",
+                  "inverse-surface": "#3f2c26",
+                  "error": "#ba1a1a",
+                  "secondary": "#505f76",
+                  "tertiary": "#005da8",
+                  "secondary-fixed-dim": "#b7c8e1",
+                  "on-error": "#ffffff",
+                  "surface-container-high": "#ffe2da",
+                  "secondary-container": "#d0e1fb",
+                  "on-primary-fixed": "#3a0b00",
+                  "outline": "#916f65",
+                  "primary-fixed": "#ffdbd0",
+                  "on-secondary-container": "#54647a",
+                  "surface-container": "#ffe9e3",
+                  "on-error-container": "#93000a",
+                  "on-tertiary-fixed": "#001c39",
+                  "on-tertiary-fixed-variant": "#004884",
+                  "surface-container-lowest": "#ffffff",
+                  "on-secondary": "#ffffff",
+                  "primary-container": "#d34000",
+                  "error-container": "#ffdad6",
+                  "on-secondary-fixed": "#0b1c30",
+                  "surface-container-highest": "#fbdcd3",
+                  "surface": "#fff8f6",
+                  "inverse-on-surface": "#ffede8",
+                  "on-primary": "#ffffff",
+                  "tertiary-fixed-dim": "#a4c9ff",
+                  "primary-fixed-dim": "#ffb59e",
+                  "on-tertiary-container": "#fdfcff",
+                  "surface-variant": "#fbdcd3",
+                  "on-background": "#281712",
+                  "primary": "#a93100",
+                  "on-tertiary": "#ffffff",
+                  "on-surface-variant": "#5c4037",
+                  "tertiary-fixed": "#d4e3ff",
+                  "surface-container-low": "#fff1ed",
+                  "on-surface": "#281712",
+                  "background": "#fff8f6",
+                  "on-primary-fixed-variant": "#842500",
+                  "surface-dim": "#f2d3ca",
+                  "secondary-fixed": "#d3e4fe",
+                  "on-secondary-fixed-variant": "#38485d"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "md": "1rem",
+                  "gutter": "1rem",
+                  "lg": "1.5rem",
+                  "margin-mobile": "1rem",
+                  "xl": "2rem",
+                  "sm": "0.5rem",
+                  "margin-desktop": "2.5rem",
+                  "base": "4px",
+                  "xs": "0.25rem",
+                  "2xl": "3rem"
+          },
+          "fontFamily": {
+                  "title-sm": ["Be Vietnam Pro"],
+                  "headline-md": ["Epilogue"],
+                  "display-lg": ["Epilogue"],
+                  "body-sm": ["Be Vietnam Pro"],
+                  "body-md": ["Be Vietnam Pro"],
+                  "label-caps": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+                  "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                  "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #e6beb2; border-radius: 10px; }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md dark:bg-slate-950/95 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center h-16 max-w-7xl mx-auto px-4 sm:px-8">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-orange-600 dark:text-orange-500 font-headline-md">AIroma</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1 font-bold font-epilogue text-base transition-all" href="#">Discover</a>
+<a class="text-slate-600 dark:text-slate-400 font-epilogue text-base font-medium hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all" href="#">Trending</a>
+<a class="text-slate-600 dark:text-slate-400 font-epilogue text-base font-medium hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all" href="#">Collections</a>
+<a class="text-slate-600 dark:text-slate-400 font-epilogue text-base font-medium hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all" href="#">Nearby</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex relative items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl text-body-sm focus:ring-2 focus:ring-primary/20 w-64" placeholder="Search for dishes..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-900 transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-900 transition-all active:scale-95 duration-200">
+<span class="material-symbols-outlined text-slate-600">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 gap-8">
+<!-- Sidebar Filters (Preserved State) -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-24 space-y-8 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div>
+<h3 class="font-headline-md text-title-sm mb-4">Applied Filters</h3>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-on-primary rounded-full text-label-caps">
+              Italian <span class="material-symbols-outlined text-[14px]">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-on-primary rounded-full text-label-caps">
+              Under $30 <span class="material-symbols-outlined text-[14px]">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-on-primary rounded-full text-label-caps">
+              4+ Stars <span class="material-symbols-outlined text-[14px]">close</span>
+</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-title-sm mb-4">Cuisine</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Italian</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Japanese</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Mediterranean</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-body-md group-hover:text-primary transition-colors">Mexican</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-title-sm mb-4">Delivery Time</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="border-outline-variant text-primary focus:ring-primary" name="time" type="radio"/>
+<span class="text-body-md">Under 20 min</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="border-outline-variant text-primary focus:ring-primary" name="time" type="radio"/>
+<span class="text-body-md">Under 40 min</span>
+</label>
+</div>
+</div>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container rounded-lg font-title-sm transition-all hover:bg-opacity-80 active:scale-[0.98]">
+          Clear All
+        </button>
+</div>
+</aside>
+<!-- Main Content Area: Error State -->
+<div class="flex-grow flex flex-col">
+<div class="mb-6">
+<h1 class="font-headline-md text-display-lg text-on-background">Search Results</h1>
+<p class="text-body-md text-outline">Finding the best flavors based on your preferences...</p>
+</div>
+<!-- Error Card (Non-blocking) -->
+<div class="relative overflow-hidden bg-white rounded-xl border border-error/20 shadow-lg p-8 md:p-12 text-center flex flex-col items-center justify-center min-h-[400px]">
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #ba1a1a 1px, transparent 0); background-size: 24px 24px;"></div>
+<div class="relative mb-6">
+<div class="w-20 h-20 bg-error-container rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[40px] text-error" data-weight="fill">wifi_off</span>
+</div>
+<div class="absolute -top-1 -right-1">
+<span class="flex h-4 w-4">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-error"></span>
+</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-error mb-2">Taste Buds Interrupted</h2>
+<p class="text-body-md text-on-surface-variant max-w-md mx-auto mb-8">
+          We're having trouble connecting to our culinary engine. Don't worry, your filters are still saved. Let's try to get those dishes back on your plate.
+        </p>
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary rounded-xl font-title-sm shadow-md hover:bg-primary-container transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+            Retry Search
+          </button>
+<button class="px-8 py-3 bg-surface-container-high text-on-surface-variant rounded-xl font-title-sm hover:bg-surface-variant transition-all active:scale-95">
+            Check Status
+          </button>
+</div>
+<div class="mt-12 flex items-center gap-6 pt-8 border-t border-outline-variant w-full max-w-lg justify-center opacity-60 grayscale">
+<img alt="" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" data-alt="a small appetizer dish with vibrant green garnish and a single golden croquette on a white ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABhRKAWsMGy8M9kbBKRuEwzoNaaWjpVVMOtIgFJjgbWOAZR7bOE_CJY0R_jiLDCkzJcQDIVpsfaFXZRcxr9ymjRUYd4gAP5NAWSJiDojxEG_9cF8elBHUDxhVkXFwpS1f9IyzmFas3WiMZ32eYmwPrjcVY1LQa6b3Vhur-vWtci4YhpB-bHEa31XIs0vUVlvwrOsbCmQ6gUgENpuzO9DgT7OmzwvIydc7WfbvX9DvtRQCjO0L9KnK8HJqcq3NS-70JoIjgXuzr_Fpr"/>
+<img alt="" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" data-alt="close up of fresh pasta carbonara with creamy sauce and cracked black pepper on a rustic stone plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-PhfUfEf8UI-80sbLNil6TZS5HzeGwLPoGOlBFrsvBj6Gp0Va7vKUbqvrPslmYQOiONdtupTgXcuMGqbiUH_EhYqHeFqVt9Z181mmOy9jypxe2CyNXKnyZzA24TdN1QSB8PqUWgQHBZF0GmcBtIWxtIdKFCSkqvAtimnbDe9yWoum9V3Z99ONGT5vIvUU4ffr4Urb2f2KK39_qn4_aur__SwfDdbaAI3Qxpp_eg-3BJG9yQaZOXtCDDY14A93GYl6ASU1o0eNRWxw"/>
+<img alt="" class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm" data-alt="a slice of artisanal pizza with melted mozzarella and fresh basil leaves on a wooden serving board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv_lCax6LtU_A10ej2qP4_e9Om0LS0db6m2OMSd10sAsqpi7h4JiR5adUMQ73PwnRKHTT5V-GUkHp11NPDJQPLdVYYW_QKM-HfqZ8zJ-mzpQtVWcEdqa824MkBjdgb0N-5LYEc-rzdUN43kFMXtxEvX954ZbqqksRb6zIomFL7oTyAr7ojhbF2UaEm64IQnm-nuct-VdH7OI2jpcH-4CH-ylmhzbLDjsXhEYVPR_JEnJ20Ziqs-yWdb6Rjuz1nrnjsW2fIx9HvNUvg"/>
+</div>
+</div>
+<!-- Suggested Content (Secondary Fallback) -->
+<div class="mt-12">
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline-md text-title-sm text-on-background">While you wait: Trending in your area</h3>
+<a class="text-primary text-body-sm font-bold flex items-center gap-1 hover:underline" href="#">
+            View All <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group cursor-pointer border border-outline-variant">
+<div class="relative h-40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="vibrant bowl of ramen with soft boiled egg and spring onions in a rich dark broth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwAof9Ngq7bTXfSwTijIC55-X7eXISCVV4dUq0WBrLjjEfnVRBT6j8fLjxqvMouCP7LSM7VlJgBnVOw2wgRZvAa0ctLmLjh0J2VX0GG_l7MhcAkw6ZMGE6c71ZXoeOomwxTLRqlcHuQMArGa3Rvb4s7KsqvcBlx0uJAAE-7fnQD69CzYwIqeFazAbYSlNtgun3IGEdq_bSqO7IX_eHdwtyuajQCBbHT7trLg6FsfGJmiYn7rum4rlnM0JbXtq-7W66_ZZ6qQUZbB0N"/>
+<div class="absolute top-3 left-3 bg-primary text-white text-label-caps px-2 py-1 rounded">TRENDING</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-sm text-on-background">Kyoto Soul Ramen</h4>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-body-sm font-bold">4.8</span>
+</div>
+</div>
+<p class="text-body-sm text-outline">Japanese • 1.2 miles</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group cursor-pointer border border-outline-variant">
+<div class="relative h-40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="overhead view of three street tacos with grilled steak and fresh salsa verde on corn tortillas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0HEBsB6PO7kLEoouSykbNOTEZhVPxTTfnPQcaVJGvhTNmoZBUBFLO1mZZIEh0OkowpLgBHiRq7iAWq9nyCnf-hn3yCx5lrjT_Hkey626CeQtkoAnwND70QfJxY4Zz3A7SkTHmsHIwVW-tnzdFF5X6rgf8avZfdNVieseMUk1p-bK56OhE6_THAJPPCOg-Ti2_4czcFxWD1mxS37dBk93AKCmb-UPCGM--7vPUjgAuLV1Hifn-i1X3oSuH5rt5GPFzbOLdSdnv1tYA"/>
+<div class="absolute top-3 left-3 bg-secondary text-white text-label-caps px-2 py-1 rounded">LOCAL FAVORITE</div>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-sm text-on-background">El Fuego Cantina</h4>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-body-sm font-bold">4.6</span>
+</div>
+</div>
+<p class="text-body-sm text-outline">Mexican • 0.8 miles</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="hidden lg:block bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group cursor-pointer border border-outline-variant">
+<div class="relative h-40 overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="a tall stacks of fluffy pancakes topped with maple syrup and fresh blueberries on a white plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYBtzJNzn3iMhBkUBSlmtNvnwThkMSydjwI_Kzv1Bp1HAr3-ouvuqmOrD8nej1l97cFyJk8dmEcYazDYPpC1i79vREkIiMY7p8XtlhG4O8ynUiNgAyk-iH7IMMZhIlIe_kl1l18lLaP3kQb66-R38DQZD3GLugqTJKCvNWs4TCw2SeRhyxdhGDP2vda6m1-P2KLR0BQu1t0ckjnL6w_3bAkgKK2szG8Tl82Mu33JWp-egvfr3WrSqodOVerx3N2PAfGC2BhpV8dj_D"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-title-sm text-on-background">Morning Glory</h4>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-body-sm font-bold">4.9</span>
+</div>
+</div>
+<p class="text-body-sm text-outline">Brunch • 2.4 miles</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 w-full rounded-none">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-orange-600 dark:text-orange-500 font-headline-md">AIroma</span>
+<p class="text-slate-500 dark:text-slate-400 font-epilogue text-sm">© 2024 AIroma. Effortless culinary discovery.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Privacy</a>
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Terms</a>
+<a class="text-slate-500 dark:text-slate-400 font-epilogue text-sm hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Partner Support</a>
+</div>
+</div>
+</footer>
+</body></html>

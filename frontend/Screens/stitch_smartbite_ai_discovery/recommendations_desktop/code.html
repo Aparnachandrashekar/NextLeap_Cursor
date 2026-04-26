@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#0076d3",
+                        "surface-tint": "#ad3300",
+                        "surface-bright": "#fff8f6",
+                        "inverse-primary": "#ffb59e",
+                        "outline-variant": "#e6beb2",
+                        "on-primary-container": "#fffbff",
+                        "inverse-surface": "#3f2c26",
+                        "error": "#ba1a1a",
+                        "secondary": "#505f76",
+                        "tertiary": "#005da8",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#ffe2da",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary-fixed": "#3a0b00",
+                        "outline": "#916f65",
+                        "primary-fixed": "#ffdbd0",
+                        "on-secondary-container": "#54647a",
+                        "surface-container": "#ffe9e3",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#001c39",
+                        "on-tertiary-fixed-variant": "#004884",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#d34000",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-container-highest": "#fbdcd3",
+                        "surface": "#fff8f6",
+                        "inverse-on-surface": "#ffede8",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#a4c9ff",
+                        "primary-fixed-dim": "#ffb59e",
+                        "on-tertiary-container": "#fdfcff",
+                        "surface-variant": "#fbdcd3",
+                        "on-background": "#281712",
+                        "primary": "#a93100",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#5c4037",
+                        "tertiary-fixed": "#d4e3ff",
+                        "surface-container-low": "#fff1ed",
+                        "on-surface": "#281712",
+                        "background": "#fff8f6",
+                        "on-primary-fixed-variant": "#842500",
+                        "surface-dim": "#f2d3ca",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#38485d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "1rem",
+                        "gutter": "1rem",
+                        "lg": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "xl": "2rem",
+                        "sm": "0.5rem",
+                        "margin-desktop": "2.5rem",
+                        "base": "4px",
+                        "xs": "0.25rem",
+                        "2xl": "3rem"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Be Vietnam Pro"],
+                        "headline-md": ["Epilogue"],
+                        "display-lg": ["Epilogue"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filter-sticky {
+            top: calc(4rem + 1px);
+            height: calc(100vh - 4rem - 1px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md dark:bg-slate-950/95 border-b border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center h-16 max-w-7xl mx-auto px-4 sm:px-8">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-orange-600 dark:text-orange-500 font-headline-md">AIroma</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-epilogue text-base font-bold text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1" href="#">Discover</a>
+<a class="font-epilogue text-base font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all active:scale-95 duration-200" href="#">Trending</a>
+<a class="font-epilogue text-base font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all active:scale-95 duration-200" href="#">Collections</a>
+<a class="font-epilogue text-base font-medium text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all active:scale-95 duration-200" href="#">Nearby</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Dishes or restaurants" type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-8 py-8">
+<!-- Search Summary -->
+<div class="mb-8">
+<h1 class="font-display-lg text-display-lg mb-2 text-on-surface">Restaurants in Bellandur</h1>
+<p class="font-body-md text-on-surface-variant">Showing AI-curated matches for "Healthy, Italian, under ₹1500"</p>
+</div>
+<!-- Warning Banner -->
+<div class="mb-8 bg-primary-fixed text-on-primary-fixed p-4 rounded-xl flex items-start gap-4 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-weight="fill">info</span>
+<div>
+<p class="font-title-sm text-title-sm mb-1">Filters relaxed</p>
+<p class="font-body-sm text-body-sm">We couldn't find exact matches for your strict budget. These top picks include slightly higher budget options with high-quality ratings.</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<!-- Sidebar Filters -->
+<aside class="md:w-64 flex-shrink-0">
+<div class="sticky filter-sticky flex flex-col gap-8">
+<div>
+<h3 class="font-title-sm text-title-sm mb-4">Budget</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">₹ Under 500</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">₹₹ 500 - 1500</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">₹₹₹ 1500+</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm mb-4">Cuisine</h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-label-caps font-label-caps cursor-pointer">Italian</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-caps font-label-caps hover:bg-primary-fixed transition-colors cursor-pointer">Indian</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-caps font-label-caps hover:bg-primary-fixed transition-colors cursor-pointer">Chinese</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-caps font-label-caps hover:bg-primary-fixed transition-colors cursor-pointer">Mexican</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-caps font-label-caps hover:bg-primary-fixed transition-colors cursor-pointer">Vegan</span>
+</div>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm mb-4">Rating</h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="border-outline-variant text-primary focus:ring-primary h-5 w-5" name="rating" type="radio"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">4.5+ Exceptional</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="border-outline-variant text-primary focus:ring-primary h-5 w-5" name="rating" type="radio"/>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">4.0+ Very Good</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content: Recommendation Cards -->
+<section class="flex-grow flex flex-col gap-8">
+<!-- Rank 1 Card -->
+<div class="group bg-surface-container-lowest border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col lg:flex-row h-full">
+<div class="lg:w-1/3 h-48 lg:h-auto relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-primary text-on-primary font-headline-md px-3 py-1 rounded-lg flex items-center gap-1">
+                            #1
+                        </div>
+<img alt="Italian Dish" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Gourmet handmade tagliatelle pasta with fresh basil and tomatoes in a bright modern restaurant setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR1AFCTGSOg-9rcQhwLAHOur5fy6a0aSTkbAoCEs3WgRavMNhwUtcP4i68Ybom9WjkECXCb3TUhffSmdafQesSta40rvMc2pl1-iPS8oPPuCG6Yorf-oDbqkUXG1yEpr3By88mLUe-3UXAtvTXTqNNledITU4HrzFkyffQI1UW5h_ZtRWp9WHF82uuJcPzu_8Z3NlXeUc_jiyJlJXM234uFG-51IaepFSeSx1WShxzw8T-QZ8fPc7nXDuIFVHc4exsVhQOtxz4qpmj"/>
+</div>
+<div class="lg:w-2/3 p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface">The Truffle Table</h2>
+<p class="font-body-sm text-on-surface-variant">Authentic Italian • Fine Dining</p>
+</div>
+<div class="text-right">
+<div class="flex items-center text-primary-container font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-weight="fill">star</span> 4.9
+                                </div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">₹₹₹</span>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low p-4 rounded-xl border border-primary/10">
+<p class="font-body-sm text-on-surface-variant"><span class="font-bold text-primary italic">WHY THIS PICK:</span> "Renowned for their zero-carb pasta alternatives and farm-to-table truffle oil sourcing."</p>
+</div>
+</div>
+</div>
+<!-- Rank 2 Card -->
+<div class="group bg-surface-container-lowest border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col lg:flex-row h-full">
+<div class="lg:w-1/3 h-48 lg:h-auto relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-secondary text-on-secondary font-headline-md px-3 py-1 rounded-lg flex items-center gap-1">
+                            #2
+                        </div>
+<img alt="Pizza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Artisan sourdough pizza with bubbly crust and fresh mozzarella on a wooden peel in a rustic stone oven" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx0BsLAfNaWGzxCUsJ7qkPX4Q5L9tgnEPiT11-m0FkTjqXlRECFpDw445AjSSWDqqBJX3RW7C1ZC8DvBd3awCTk4hhb7WucwZuFphN9vR1yTPLh1DGpdk8sP4wtQibevWbhAdzMg4-Vd0t3mqLUzMqE5wNt5ozurvu6J661TTgccI_EdMVBid0k7a6EYN262DyZf43xmrG3UqKWJd8t0fzWhLf5rM4at9i75gGUQN5KZIKwFBYQzeZxQY1F4gbVTXYROkSDbkb6H6z"/>
+</div>
+<div class="lg:w-2/3 p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface">Bellandur Bistro</h2>
+<p class="font-body-sm text-on-surface-variant">Pizzeria &amp; Cafe • Casual</p>
+</div>
+<div class="text-right">
+<div class="flex items-center text-primary-container font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-weight="fill">star</span> 4.7
+                                </div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">₹₹</span>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low p-4 rounded-xl">
+<p class="font-body-sm text-on-surface-variant"><span class="font-bold text-primary">AIroma Insights:</span> The best whole-wheat crust in the area. Great for high-protein diets.</p>
+</div>
+</div>
+</div>
+<!-- Rank 3 Card -->
+<div class="group bg-surface-container-lowest border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col lg:flex-row h-full">
+<div class="lg:w-1/3 h-48 lg:h-auto relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-secondary text-on-secondary font-headline-md px-3 py-1 rounded-lg flex items-center gap-1">
+                            #3
+                        </div>
+<img alt="Healthy Salad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Vibrant mediterranean salad with chickpeas, feta, and olives in a minimalist white bowl on a light stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjZsNF1rOO7YtPomBChQOJaR6EUOE383DKUEDwtv4-LpoZTzO3_ABKPbPFnUuM211DexkxTZ8GHisYC1CQdIdd5WEt3wPKITAxYSKlDE7K4K_5MbKdaI2F1AoWGHcz9XDHwu2VHAtVD0379kJvnA2IJLq7Gw6MwG2mTdt8OD1sHUlxuiooUUE_XmQmpzlhEqyh6RrBI6DnUBzbb0G6KQlxAdlRkUPYRc4-edxhVJ3zU8EaGNmx7PNGtVwYT5lfe-bN0QU6wEKTfQf9"/>
+</div>
+<div class="lg:w-2/3 p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface">Green Gardenia</h2>
+<p class="font-body-sm text-on-surface-variant">Healthy Fusion • Eco-friendly</p>
+</div>
+<div class="text-right">
+<div class="flex items-center text-primary-container font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-weight="fill">star</span> 4.5
+                                </div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">₹</span>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low p-4 rounded-xl">
+<p class="font-body-sm text-on-surface-variant"><span class="font-bold text-primary">AIroma Insights:</span> Unbeatable value for the nutrition density. Famous for their pestos.</p>
+</div>
+</div>
+</div>
+<!-- Rank 4 Card -->
+<div class="group bg-surface-container-lowest border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col lg:flex-row h-full">
+<div class="lg:w-1/3 h-48 lg:h-auto relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-secondary text-on-secondary font-headline-md px-3 py-1 rounded-lg flex items-center gap-1">
+                            #4
+                        </div>
+<img alt="Pasta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Classic spaghetti aglio e olio with golden toasted garlic and red chili flakes in a dim lit cozy restaurant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVRfuad0CzizcpEePgQVJ08bggv3NMN2F8js6D4vxd4tejThq88nH5FStjg4Cm0kzeoUu_TAtHtt_TNwKUzhBHMC8DsA_WJGwQEezl3IDUyCtuT6PLRPwO-8fKvpb0hRbmas0GqUokfj77GDKFyhiRbwwyIPYdtt7tjdBfFO7zPRfZ0a35CFeRqXMK-KOVyes-5s1vIw51fbvWyDU2bCnBKzd2IQe3fYliNerZzJ_TpRWH8boXTbp0F1psuF8DfwvCVeM38cOXXdtX"/>
+</div>
+<div class="lg:w-2/3 p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface">Luigi's Kitchen</h2>
+<p class="font-body-sm text-on-surface-variant">Homestyle Italian • Cozy</p>
+</div>
+<div class="text-right">
+<div class="flex items-center text-primary-container font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-weight="fill">star</span> 4.4
+                                </div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">₹₹</span>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low p-4 rounded-xl">
+<p class="font-body-sm text-on-surface-variant"><span class="font-bold text-primary">AIroma Insights:</span> Features a secret menu of low-sodium traditional recipes.</p>
+</div>
+</div>
+</div>
+<!-- Rank 5 Card -->
+<div class="group bg-surface-container-lowest border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col lg:flex-row h-full">
+<div class="lg:w-1/3 h-48 lg:h-auto relative overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-secondary text-on-secondary font-headline-md px-3 py-1 rounded-lg flex items-center gap-1">
+                            #5
+                        </div>
+<img alt="Interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Interior of a chic modern bistro with hanging plants and warm Edison bulbs over marble tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYjgtNzt5op3a7BHKvbDLpmvNlTZ6ikgJ8nopWDjr3WSYV0Keoaj-H9aAO-lZ0sEWveXkCRNDSnW4H5K-barvOzm-_ifMCIQIAfdaOZPKkWgjmNNduYCE56EITi-Fk9TPdePXf05IXx3MimP2Xy-7UD-moj-QNHLp1E2eFVg4T300j4qZsAFMX4JzyMHiUfM3J43LG8t-4l1AS_Q1kEsqbsj7JbiK1etcFXCgnxjRHfJbK3630gLjqTNdtusW9UyYMh4rd_OdMmT3M"/>
+</div>
+<div class="lg:w-2/3 p-6">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface">The Urban Oven</h2>
+<p class="font-body-sm text-on-surface-variant">Modern Fusion • High Energy</p>
+</div>
+<div class="text-right">
+<div class="flex items-center text-primary-container font-bold">
+<span class="material-symbols-outlined text-sm mr-1" data-weight="fill">star</span> 4.3
+                                </div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">₹₹</span>
+</div>
+</div>
+<div class="mt-4 bg-surface-container-low p-4 rounded-xl">
+<p class="font-body-sm text-on-surface-variant"><span class="font-bold text-primary">AIroma Insights:</span> Top-tier ambiance. Offers vegan cheese swaps for all pizzas.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 w-full rounded-none">
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<span class="text-lg font-bold text-orange-600 dark:text-orange-500 font-headline-md">AIroma</span>
+<p class="font-epilogue text-sm text-slate-500 dark:text-slate-400 mt-2">© 2024 AIroma. Effortless culinary discovery.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">About Us</a>
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Privacy</a>
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Terms</a>
+<a class="font-epilogue text-sm text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 underline-offset-4 hover:underline transition-colors duration-200" href="#">Partner Support</a>
+</div>
+</div>
+</footer>
+</body></html>

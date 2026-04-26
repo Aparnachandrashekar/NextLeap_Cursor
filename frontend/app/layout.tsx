@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, Epilogue } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const beVietnam = Be_Vietnam_Pro({
+  variable: "--font-be-vietnam",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Restaurant Recommender",
-  description: "Next.js UI for the AI restaurant recommender",
+  title: "AIroma | Crave & Discover",
+  description: "AI-powered restaurant discovery (Next.js)",
 };
 
 export default function RootLayout({
@@ -23,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="light scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${epilogue.variable} ${beVietnam.variable} bg-background text-on-background`}
       >
         {children}
       </body>
