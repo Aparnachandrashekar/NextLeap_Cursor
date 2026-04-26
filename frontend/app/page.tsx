@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type RecommendResponse = {
   recommendations: Array<{
@@ -20,6 +20,8 @@ const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
 export default function Home() {
   const [location, setLocation] = useState("Bellandur");
+  const [locationOptions, setLocationOptions] = useState<string[]>([]);
+  const [locationsStatus, setLocationsStatus] = useState<"loading" | "ok" | "error">("loading");
   const [maxCost, setMaxCost] = useState("2000");
   const [minRating, setMinRating] = useState("4");
   const [cuisines, setCuisines] = useState("Italian, Chinese");
@@ -27,6 +29,34 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState<RecommendResponse | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(`${API_BASE}/locations`);
+        if (!res.ok) {
+          const t = await res.text();
+          throw new Error(t || res.statusText);
+        }
+        const j = (await res.json()) as { locations: string[] };
+        const list = j.locations ?? [];
+        if (cancelled) return;
+        setLocationOptions(list);
+        if (list.length) {
+          setLocation((prev) => (list.includes(prev) ? prev : list[0]!));
+        }
+        setLocationsStatus("ok");
+      } catch {
+        if (!cancelled) {
+          setLocationsStatus("error");
+        }
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -82,14 +112,45 @@ export default function Home() {
           className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="text-sm">
-              <span className="mb-1 block font-medium">Location</span>
-              <input
-                className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-950"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                required
-              />
+            <label className="text-sm sm:col-span-2">
+              <span className="mb-1 block font-medium">
+                Location (Bangalore areas from dataset)
+              </span>
+              {locationsStatus === "loading" && locationOptions.length === 0 ? (
+                <select
+                  className="w-full rounded-lg border border-zinc-300 bg-zinc-100 px-3 py-2 text-sm text-zinc-500 dark:border-zinc-700 dark:bg-zinc-900"
+                  disabled
+                >
+                  <option>Loading areas from dataset…</option>
+                </select>
+              ) : locationOptions.length > 0 ? (
+                <select
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-950"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  required
+                >
+                  {locationOptions.map((loc) => (
+                    <option key={loc} value={loc}>
+                      {loc}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-950"
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  required
+                  placeholder="Type a locality (load /locations or run ingest)"
+                />
+              )}
+              {locationsStatus === "error" && (
+                <p className="mt-1 text-xs text-amber-700 dark:text-amber-300">
+                  Could not load location list. Using manual entry. Ensure the API is running
+                  and `python -m phase1.ingest` has been executed.
+                </p>
+              )}
             </label>
             <label className="text-sm">
               <span className="mb-1 block font-medium">Max cost (INR)</span>

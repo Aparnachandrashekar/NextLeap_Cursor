@@ -87,6 +87,12 @@ curl http://127.0.0.1:8000/health
 curl http://127.0.0.1:8000/metrics
 ```
 
+List Bangalore-area localities (from the ingested dataset, `listed_in(city)` field):
+
+```bash
+curl -sS http://127.0.0.1:8000/locations | python -m json.tool
+```
+
 ---
 
 ## 6) Run frontend (Next.js)

@@ -12,6 +12,7 @@ from phase4.observability import (
     finalize_request_logging,
     metrics_snapshot,
 )
+from phase1.locations import list_dataset_locations
 from phase4.service import phase4_recommend
 
 
@@ -51,6 +52,11 @@ async def request_context_middleware(request: Request, call_next):  # type: igno
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/locations")
+def locations() -> dict[str, list[str]]:
+    return {"locations": list_dataset_locations()}
 
 
 @app.get("/metrics")
