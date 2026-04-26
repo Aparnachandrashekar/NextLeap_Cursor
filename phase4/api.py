@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -12,12 +13,26 @@ from phase4.observability import (
     finalize_request_logging,
     metrics_snapshot,
 )
+from phase1.ensure_data import start_background_ingest_if_empty
 from phase1.locations import list_dataset_locations
 from phase4.service import phase4_recommend
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
-app = FastAPI(title="Restaurant Recommender API - Phase 4", version="0.4.0")
+
+
+@asynccontextmanager
+async def _lifespan(_: FastAPI):
+    # `data/` is not in git: empty DB until HuggingFace ingest (build step or background thread).
+    start_background_ingest_if_empty()
+    yield
+
+
+app = FastAPI(
+    title="Restaurant Recommender API - Phase 4",
+    version="0.4.0",
+    lifespan=_lifespan,
+)
 
 app.add_middleware(
     CORSMiddleware,

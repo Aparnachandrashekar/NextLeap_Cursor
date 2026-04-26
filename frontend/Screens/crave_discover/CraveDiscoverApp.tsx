@@ -76,7 +76,7 @@ export function CraveDiscoverApp() {
     setPhase("finding");
     setSearchSubtitle(buildSearchSubtitle(location, cuisines, minRating, maxCost));
     const cuisineList = cuisines
-      .split(",")
+      .split(/[,;]+/)
       .map((c) => c.trim())
       .filter(Boolean);
     const body = {
