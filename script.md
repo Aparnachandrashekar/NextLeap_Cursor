@@ -199,3 +199,33 @@ python -m phase2.query --location Bellandur --min-rating 4 --limit 5
 - `phase4/` -> productized API + observability
 - `backend/` -> hardened backend layering (`api`, `services`, `repositories`, `llm`, `telemetry`)
 
+---
+
+## 12) Streamlit deployment (single-service backend+UI)
+
+This project is now ready to run directly on Streamlit without a separate FastAPI process.
+
+Local run:
+
+```bash
+source .venv/bin/activate
+streamlit run streamlit_app.py
+```
+
+For Streamlit Cloud:
+
+1. Keep `requirements.txt` in repo root.
+2. Set app entry file as `streamlit_app.py`.
+3. Add secrets in Streamlit dashboard (or use `.streamlit/secrets.toml` locally):
+
+```toml
+RR_GROQ_API_KEY = "your_groq_api_key_here"
+RR_LLM_PROVIDER = "groq"
+RR_GROQ_MODEL = "llama-3.3-70b-versatile"
+```
+
+Notes:
+- Streamlit app uses the same recommendation core: `backend.services.RecommendationService`.
+- It reads locations from ingested SQLite data.
+- Run ingestion once before deploy if the database is not already present.
+
